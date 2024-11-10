@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>HTML Forms</title>
+</head>
+<body>
+    <form action="" >
+        <fieldset>
+            <legend>1. Name</legend>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required /><br>
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+ 
+    <form action="" method="">
+        <fieldset>
+            <legend>2. Email</legend>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="sample@example.com" required /><br>
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+ 
+    
+    <form action="" >
+        <fieldset>
+            <legend>3. Gender</legend>
+            <input type="radio" id="male" name="gender" value="Male" required />
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female" />
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other" />
+            <label for="other">Other</label>
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+ 
+    <form action="" >
+        <fieldset>
+            <legend>4. Date of Birth</legend>
+            <label for="dob">DOB:</label>
+            <input type="date" id="dob" name="dob" required />
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+ 
+
+    <form action="" >
+        <fieldset>
+            <legend>5. Degree</legend>
+            <input type="checkbox" id="ssc" name="degree[]" value="SSC" />
+            <label for="ssc">SSC</label>
+            <input type="checkbox" id="hsc" name="degree[]" value="HSC" />
+            <label for="hsc">HSC</label>
+            <input type="checkbox" id="bsc" name="degree[]" value="BSc" />
+            <label for="bsc">BSc</label>
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+ 
+   
+    <form action="" >
+        <fieldset>
+            <legend>6. Blood Group</legend>
+            <label for="blood_group">Blood Group:</label>
+            <select id="blood_group" name="blood_group" required>
+                <option value="A+">A+</option>
+                <option value="B+">B+</option>
+                <option value="AB+">AB+</option>
+                <option value="O+">O+</option>
+                <option value="A-">A-</option>
+                <option value="B-">B-</option>
+                <option value="AB-">AB-</option>
+                <option value="O-">O-</option>
+            </select>
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+ 
+
+    <form action="" >
+        <fieldset>
+            <legend>7. Profile Picture</legend>
+            <label for="user_id">User ID:</label>
+            <input type="text" id="user_id" name="user_id" required /><br>
+            <label for="profile_picture">Picture:</label>
+            <input type="file" id="profile_picture" name="profile_picture" accept="image/*" required /><br>
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+ 
+</body>
+</html>
