@@ -1,18 +1,21 @@
 <?php
 session_start();
 
-// check submitted or not
+// Check form is submitted or not
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Login button
+    //  Login button
     if (isset($_POST['login'])) {
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
+        $confirm_password = trim($_POST['confirm_password']);
 
         // Validation for login
-        if (empty($username) || empty($password)) {
-            $error = "Username and Password are required!";
+        if (empty($username) || empty($password) || empty($confirm_password)) {
+            $error = "All fields are required!";
+        } elseif ($password !== $confirm_password) {
+            $error = "Passwords do not match!";
         } else {
-            // login 
+            // login success
             $_SESSION['status'] = true;
             $_SESSION['username'] = $username;
             header('Location: home.php'); // go to home.php
@@ -20,9 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // Signup button
+    //  Signup button
     if (isset($_POST['signup'])) {
-        header('Location: registration.php'); // go to reg.php
+        header('Location: registration.php'); // go to registration.php
         exit();
     }
 }
@@ -51,6 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <label for="password">Password</label>
             <input type="password" id="password" name="password"><br><br>
+
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password"><br><br>
             <button type="submit" name="login">Login</button>
             <button type="submit" name="signup">Signup</button>
         </fieldset>
